@@ -3,7 +3,7 @@ pipeline {
   stages {
       stage('checkout stage') {
           steps {
-              git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
+              git branch: 'master', url: 'https://github.com/brad-jivedh/test-maven.git'
           }
       }
       stage('Testing stage') {
