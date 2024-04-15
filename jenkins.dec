@@ -1,0 +1,25 @@
+pipeline {
+ agent any
+  stages {
+      stage('checkout stage') {
+          steps {
+              git branch: 'master', url: 'https://github.com/brad-jivedh/hello-world.git'
+          }
+      }
+      stage('Testing stage') {
+          steps {
+              sh 'mvn test'
+          }
+      }
+      stage('Building stage') {
+          steps {
+              sh 'mvn clean install'
+          }
+      }
+      stage('Deploying stage') {
+          steps {
+              sh 'sudo mv /var/lib/jenkins/workspace/Que_4A/target/*.war /opt/apache-tomcat-9.0.87/webapps/' 
+      }
+      }
+  }
+ }
